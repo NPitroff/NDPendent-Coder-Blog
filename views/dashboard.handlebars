@@ -1,0 +1,28 @@
+{{#if loggedIn}}
+    <div class="click">
+    <a href="/dashboard/create">Create New Post</a>
+    </div>
+    {{/if}}
+
+
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol class="post-list"> 
+
+    {{#each posts as |post|}}
+    <li class="box">
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+     </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/add-post.js"></script>
+<script src="/javascript/comment.js"></script>
+{{/if}}

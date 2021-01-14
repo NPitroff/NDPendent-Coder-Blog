@@ -1,0 +1,51 @@
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Blog</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+ 
+        <nav>
+  
+        {{#if loggedIn}}
+
+
+        <a href="/">home</a>
+        <a href="/dashboard">Draft-A-Post</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+
+ 
+        <a href="/">home</a>
+        <a href="/dashboard">dashboard</a>
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+
+      <h1>
+        <a href="/">NDPendent-Blog</a>
+      </h1>
+
+
+
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+      This Blog Was Created By NDPendent Coders LLC
+    </footer>
+  </div>
+  
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
